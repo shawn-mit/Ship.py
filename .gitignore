@@ -1,0 +1,5 @@
+shippy/bin
+shippy/include
+shippy/lib
+shippy/local
+shippy/pip-selfcheck.json
