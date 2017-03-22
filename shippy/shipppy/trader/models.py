@@ -2,7 +2,7 @@ from django.db import models
 # Create your models here.
 import datetime
 
-class us_port(models.Model):
+class us_port(models.Model): 
 
     """
     The us_port table refernces the city and states of maritime ports in relation to the 
@@ -11,7 +11,6 @@ class us_port(models.Model):
 
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
-    year = models.ForeignKey('trade_year')
         
     def __str__(self):         
         return (self.city, self.state)
@@ -23,9 +22,11 @@ class us_port(models.Model):
 
 class trade_year (models.Model):
 
-    year = models.DateField()
+    year = models.IntegerField()
     total_ton = models.IntegerField()
-    total_value = models.DecimalField(max_digits=6, decimal_places=2)
+    total_value = models.IntegerField()
+    usport_id = models.ForeignKey('trade_year', on_delete=models.CASCADE, null=True, blank=True)
+
    
     def __str__(self):        
         return (self.year, self.total_ton)
