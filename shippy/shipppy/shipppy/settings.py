@@ -41,7 +41,7 @@ BOWER_INSTALLED_APPS = (
 #except ImportError:
  #   pass
 
-
+STATIC_ROOT = '/home/servuntu/workspace/shipy/Ship.py/shippy/shipppy/trader/static'
 
 
 STATICFILES_FINDERS = (
