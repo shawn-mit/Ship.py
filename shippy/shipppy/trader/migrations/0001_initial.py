@@ -13,25 +13,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='trade_year',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('year', models.DateField()),
+                ('id', models.AutoField(verbose_name='ID', auto_created=True, primary_key=True, serialize=False)),
+                ('year', models.IntegerField()),
                 ('total_ton', models.IntegerField()),
-                ('total_value', models.DecimalField(decimal_places=2, max_digits=6)),
+                ('total_value', models.IntegerField()),
+                ('usport', models.CharField(max_length=155)),
             ],
             options={
                 'ordering': ['year'],
-            },
-        ),
-        migrations.CreateModel(
-            name='us_port',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('city', models.CharField(max_length=50)),
-                ('state', models.CharField(max_length=2)),
-                ('year', models.ForeignKey(to='trader.trade_year')),
-            ],
-            options={
-                'ordering': ['state'],
             },
         ),
     ]
