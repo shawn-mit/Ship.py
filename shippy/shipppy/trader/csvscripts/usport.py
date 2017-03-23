@@ -19,24 +19,16 @@ if __name__ == '__main__':
     print(next(iterate_data))
 
 
-    with sqlite3.connect("../../db.sqlite3") as db:
-        cursor = db.cursor()
+    #with sqlite3.connect("../../db.sqlite3") as db:
+        #cursor = db.cursor()
 
 
-        for row in iterate_data:
+    for row in iterate_data:
             city = row[0]
             state = row[1]
 
             print(city, state)
 
-            cursor.execute("""
-                INSERT INTO trader_us_port(id, city, state)
-                VALUES (null, '{}', '{}')""".format(city, state))
-
-
-
-
-
-            =======================================
-
-
+           # cursor.execute("""
+                #INSERT INTO trader_us_port(id, city, state)
+                #VALUES (null, '{}', '{}')""".format(city, state))
