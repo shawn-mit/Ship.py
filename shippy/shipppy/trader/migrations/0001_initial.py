@@ -13,10 +13,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='trade_year',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, primary_key=True, serialize=False)),
+                ('id', models.AutoField(serialize=False, primary_key=True, auto_created=True, verbose_name='ID')),
                 ('year', models.IntegerField()),
-                ('total_ton', models.IntegerField()),
-                ('total_value', models.IntegerField()),
+                ('total_ton', models.IntegerField(blank=True, null=True)),
+                ('total_value', models.IntegerField(blank=True, null=True)),
                 ('usport', models.CharField(max_length=155)),
             ],
             options={

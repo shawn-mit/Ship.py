@@ -13,7 +13,7 @@ class trade_year (models.Model):
 
    
     def __str__(self):        
-        return (self.year, self.total_ton)
+        return str(self.year) + ' ' + str(self.total_value) 
 
     class Meta: 
         ordering = ['year']
