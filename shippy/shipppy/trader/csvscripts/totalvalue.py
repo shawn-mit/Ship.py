@@ -27,12 +27,13 @@ if __name__ == '__main__':
         #print(data)
         #print(next(iterate_data)) 
 
+        #setup sqlite connection with cursor 
+        #iterate over all data for us port and each year
     with sqlite3.connect("../../db.sqlite3") as db:
         cursor = db.cursor()
        
         for row in iterate_data:
             #data = row[0:]
-            
             #total_value = row[1:]
             usport = row[0]
             year2003 = row[1]
@@ -46,6 +47,8 @@ if __name__ == '__main__':
             year2012 = row[9]
             year2013 = row[10]
 
+            #see results of for loop
+
             print(usport, 
                 year2003,
                 year2004,
@@ -58,7 +61,10 @@ if __name__ == '__main__':
                 year2012,
                 year2013)
 
-        
+            #(INSERT INTO) Build database with Django model's fields AS columns.
+            #(VALUES)Give the columns VALUE attributes id=null / {} is integer / '{}' is string.
+            #(.format)Format year integer object with the specified year object and total_value column. 
+            # last object is a string for the loading of usport data.
             cursor.execute("""
                   INSERT INTO trader_trade_year(id, year, total_value, usport)
                   VALUES(null, {}, '{}','{}')""".format(2003,  year2003, usport))
