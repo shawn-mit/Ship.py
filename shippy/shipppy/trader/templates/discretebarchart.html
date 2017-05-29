@@ -1,0 +1,30 @@
+{% load static %}
+<link media="all" href="{% static 'nvd3/src/nv.d3.css' %}" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src='{% static 'd3/d3.min.js' %}'></script>
+<script type="text/javascript" src='{% static 'nvd3/nv.d3.min.js' %}'></script>
+
+{% load nvd3_tags %}
+<head>
+    {% include_chart_jscss %}
+	{% load_chart charttype chartdata "discretebarchart_container" extra %}
+
+<style>
+body {
+    border: 1px solid black;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+}
+</style>
+
+<title> Ship.py </title>
+
+</head>
+
+<body>
+	<h1> Ship.py </h1>
+    <!--<h5>US Ports Total Trade Value Export USD  </h5>-->
+    {% include_container "discretebarchart_container" 600 700 %}
+</body>e

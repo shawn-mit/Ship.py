@@ -6,7 +6,6 @@ def get_totalvalues_data_as_a_list(totalvalues):
     """ 
     Method which will read CSV file 'tot' and parse CSV data into lists by line. The model will then post the data into the us_port model 
     with create object. 
-    Author: Shawn M. 
     """
 
     with open(totalvalues, "r") as values:

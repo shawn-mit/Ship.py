@@ -7,6 +7,13 @@ Django Framework required:
 Django REST Framework: 
 -- pip install djangorestframework
 
+Django NVD3 - Djanog D3.js wrapper
+-- pip install djangonvd3
+-- bower install 
+
+
 Open data available for PUBLIC consumption: 
   -- PIERs Import and Export trade 
-  --Data.gov 
+  -- Data.gov/Maritime
+
+
